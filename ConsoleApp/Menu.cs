@@ -60,13 +60,21 @@ namespace ConsoleApp
                     case "4":
                         Console.Clear();
 
+                        Console.WriteLine("Enter the id of the note which you want to delete: ");
+                        string str_delete_id = Console.ReadLine();
+
+                        int int_delete_id = Convert.ToInt32(str_delete_id);
+                        notesCollection.RemoveAt(--int_delete_id);
+
+                        Console.Clear();
+                        Console.WriteLine("Note deleted");
                         break;
 
                     case "5":
                         Console.Clear();
                         Console.WriteLine("Exiting program");
                         return;
-
+                        
                     default:
                         Console.WriteLine("Invalid option");
                         break;
